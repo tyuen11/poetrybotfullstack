@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'poetry/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Poetry Generator</h1>
+        <p>Please select a poem to generate:</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name="poemType" value="sonnet">Generate Sonnet</button>
+            <button type="submit" name="poemType" value="quatrain">Generate Quatrain</button>
+            <button type="submit" name="poemType" value="couplet">Generate Couplet</button>
+        </form>
+        {% if poem %}
+            {% for line in poem %}
+                <p>{{ line }}.</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
