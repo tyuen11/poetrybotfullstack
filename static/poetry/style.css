@@ -1,9 +1,22 @@
+
+body {
+    background-color: #fdf5e8;
+	font-family: IM Fell English;
+}
+
 .container {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-p {
-    color: green;
+.poem-container {
+    margin-top: 20px;
+}
+.poem-container > .poem-line {
+    margin: 3px 0px; 3px 0px;
+}
+.poem-container > .author {
+    margin: 10px 0px; 3px 0px;
+    text-align: right;
 }
