@@ -5,21 +5,25 @@
     <title>Title</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'poetry/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=IM+Fell+English" />
 </head>
 <body>
     <div class="container">
         <h1>Poetry Generator</h1>
-        <p>Please select a poem to generate:</p>
+        <p>Please select a poem for Charles to write:</p>
         <form method="POST">
             {% csrf_token %}
-            <button type="submit" name="poemType" value="sonnet">Generate Sonnet</button>
-            <button type="submit" name="poemType" value="quatrain">Generate Quatrain</button>
-            <button type="submit" name="poemType" value="couplet">Generate Couplet</button>
+            <button type="submit" name="poemType" value="sonnet">Sonnet</button>
+            <button type="submit" name="poemType" value="quatrain">Quatrain</button>
+            <button type="submit" name="poemType" value="couplet">Couplet</button>
         </form>
         {% if poem %}
+            <div class="poem-container">
             {% for line in poem %}
-                <p>{{ line }}.</p>
+                <p class="poem-line">{{ line }}.</p>
             {% endfor %}
+                <p class="author">-Charles, The Poetry Robot</p>
+            </div>
         {% endif %}
     </div>
 </body>
