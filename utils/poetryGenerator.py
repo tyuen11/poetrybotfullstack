@@ -1,8 +1,7 @@
 import random
 import re
 import nltk
-nltk.download('brown')
-nltk.download('punkt')
+nltk.download()
 from nltk.corpus import brown, treebank, cmudict, gutenberg
 import numpy as np
 import syllables as syllables_p
